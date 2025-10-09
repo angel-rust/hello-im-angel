@@ -7,7 +7,7 @@ import Hero3D from './Hero3D';
 
 export default function Scene() {
   return (
-    <div className="fixed inset-0 -z-10">
+    <div className="absolute inset-0 w-full h-full -z-10">
       <Canvas
         shadows
         dpr={[1, 2]}
@@ -16,6 +16,7 @@ export default function Scene() {
           alpha: true,
           powerPreference: 'high-performance'
         }}
+        style={{ pointerEvents: 'auto' }}
       >
         <PerspectiveCamera makeDefault position={[0, 0, 5]} />
 
