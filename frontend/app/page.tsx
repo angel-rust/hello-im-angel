@@ -1,10 +1,8 @@
-import Scene from '@/components/3d/Scene';
 import HeroSection from '@/components/sections/HeroSection';
 
 export default function Home() {
   return (
     <main className="relative">
-      <Scene />
       <HeroSection />
     </main>
   );
