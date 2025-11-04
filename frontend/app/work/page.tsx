@@ -1,32 +1,9 @@
 import Link from 'next/link';
+import { getAllProjects } from '@/lib/projects';
+import { ArrowRight, ExternalLink } from 'lucide-react';
 
 export default function Work() {
-  const projects = [
-    {
-      title: '3D Portfolio Website',
-      description: 'An immersive 3D portfolio built with Next.js, React Three Fiber, and Rust backend.',
-      tech: ['Next.js', 'Three.js', 'Rust', 'Tailwind CSS'],
-      year: '2025'
-    },
-    {
-      title: 'Real-time Collaboration Platform',
-      description: 'A WebSocket-based platform for team collaboration with real-time document editing.',
-      tech: ['React', 'Node.js', 'WebSockets', 'PostgreSQL'],
-      year: '2024'
-    },
-    {
-      title: 'E-commerce Analytics Dashboard',
-      description: 'Comprehensive analytics platform with data visualization and reporting capabilities.',
-      tech: ['Next.js', 'TypeScript', 'GraphQL', 'D3.js'],
-      year: '2024'
-    },
-    {
-      title: 'AI-Powered Content Generator',
-      description: 'Machine learning-powered tool for generating marketing content and copy.',
-      tech: ['React', 'Python', 'TensorFlow', 'FastAPI'],
-      year: '2023'
-    }
-  ];
+  const projects = getAllProjects();
 
   return (
     <div className="min-h-screen bg-black text-neutral px-6 pt-24 pb-12 md:px-12">
@@ -51,34 +28,41 @@ export default function Work() {
 
           <div className="space-y-6">
             {projects.map((project) => (
-              <div
-                key={project.title}
-                className="bg-gray-10/30 border border-accent-blue/20 rounded-lg p-6 hover:border-accent-blue/40 hover:shadow-glow-sm transition-all duration-300 group"
+              <Link
+                key={project.slug}
+                href={`/work/${project.slug}`}
+                className="block group"
               >
-                <div className="flex justify-between items-start mb-3">
-                  <h2 className="text-2xl font-bold text-accent-blue group-hover:text-accent-blue/90 transition-colors">
-                    {project.title}
-                  </h2>
-                  <span className="text-sm text-neutral/60 font-mono">
-                    {project.year}
-                  </span>
-                </div>
-
-                <p className="text-neutral/80 mb-4 leading-relaxed">
-                  {project.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-3 py-1 text-sm bg-accent-blue/10 text-accent-blue border border-accent-blue/30 rounded-full"
-                    >
-                      {tech}
+                <div className="bg-gray-10/30 border border-accent-blue/20 rounded-lg p-6 hover:border-accent-blue/40 hover:shadow-glow-sm transition-all duration-300">
+                  <div className="flex justify-between items-start mb-3">
+                    <h2 className="text-2xl font-bold text-accent-blue group-hover:text-accent-blue/90 transition-colors">
+                      {project.title}
+                    </h2>
+                    <span className="text-sm text-neutral/60 font-mono">
+                      {project.year}
                     </span>
-                  ))}
+                  </div>
+
+                  <p className="text-neutral/80 mb-4 leading-relaxed">
+                    {project.description}
+                  </p>
+
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tech.map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-3 py-1 text-sm bg-accent-blue/10 text-accent-blue border border-accent-blue/30 rounded-full"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="flex items-center text-accent-blue font-semibold group-hover:gap-3 gap-2 transition-all">
+                    View details <ArrowRight className="w-4 h-4" />
+                  </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
 
@@ -93,9 +77,9 @@ export default function Work() {
                 href="https://github.com/angel-rust"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-accent-blue hover:underline"
+                className="inline-flex items-center gap-1 text-accent-blue hover:underline"
               >
-                GitHub
+                GitHub <ExternalLink className="w-4 h-4" />
               </a>
               .
             </p>

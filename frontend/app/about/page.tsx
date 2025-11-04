@@ -1,9 +1,11 @@
 import Link from 'next/link';
+import Timeline from '@/components/sections/Timeline';
+import Testimonials from '@/components/sections/Testimonials';
 
 export default function About() {
   return (
     <div className="min-h-screen bg-black text-neutral px-6 pt-24 pb-12 md:px-12">
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         {/* Back Button */}
         <Link
           href="/"
@@ -19,7 +21,7 @@ export default function About() {
         <article className="prose prose-invert prose-accent-blue max-w-none">
           <h1 className="text-5xl font-bold mb-6 text-accent-blue">About Me</h1>
 
-          <div className="space-y-6 text-lg leading-relaxed">
+          <div className="space-y-6 text-lg leading-relaxed mb-16">
             <p>
               Hi, I&apos;m Angel Medina, a full-stack developer passionate about creating
               beautiful, performant web experiences that push the boundaries of what&apos;s
@@ -53,6 +55,16 @@ export default function About() {
             </p>
           </div>
         </article>
+
+        {/* Timeline */}
+        <div className="my-20">
+          <Timeline />
+        </div>
+
+        {/* Testimonials */}
+        <div className="my-20">
+          <Testimonials />
+        </div>
       </div>
     </div>
   );
