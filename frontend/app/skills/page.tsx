@@ -1,24 +1,48 @@
+'use client';
+
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import { api } from '@/lib/api';
+import type { Skill } from '@/lib/types';
 
 export default function Skills() {
-  const skillCategories = [
-    {
-      title: 'Frontend',
-      skills: ['React', 'Next.js', 'TypeScript', 'Three.js', 'Tailwind CSS', 'Framer Motion']
-    },
-    {
-      title: 'Backend',
-      skills: ['Rust', 'Node.js', 'PostgreSQL', 'Redis', 'GraphQL', 'REST APIs']
-    },
-    {
-      title: 'Tools & DevOps',
-      skills: ['Git', 'Docker', 'CI/CD', 'AWS', 'Vercel', 'Linux']
-    },
-    {
-      title: '3D & Graphics',
-      skills: ['Three.js', 'React Three Fiber', 'WebGL', 'GLSL', 'Blender', 'Spline']
+  const [skills, setSkills] = useState<Skill[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    async function fetchSkills() {
+      try {
+        const data = await api.getSkills();
+        setSkills(data);
+      } catch (err) {
+        console.error('Failed to fetch skills:', err);
+        setError('Failed to load skills. Using fallback data.');
+        // Fallback data
+        setSkills([
+          { id: 1, name: 'React', category: 'Frontend', proficiency: 95, icon: null, order_index: 1, created_at: '', updated_at: '' },
+          { id: 2, name: 'Next.js', category: 'Frontend', proficiency: 90, icon: null, order_index: 2, created_at: '', updated_at: '' },
+          { id: 3, name: 'TypeScript', category: 'Frontend', proficiency: 90, icon: null, order_index: 3, created_at: '', updated_at: '' },
+          { id: 4, name: 'Rust', category: 'Backend', proficiency: 85, icon: null, order_index: 1, created_at: '', updated_at: '' },
+          { id: 5, name: 'Node.js', category: 'Backend', proficiency: 90, icon: null, order_index: 2, created_at: '', updated_at: '' },
+          { id: 6, name: 'PostgreSQL', category: 'Backend', proficiency: 85, icon: null, order_index: 3, created_at: '', updated_at: '' },
+        ]);
+      } finally {
+        setLoading(false);
+      }
     }
-  ];
+
+    fetchSkills();
+  }, []);
+
+  // Group skills by category
+  const skillsByCategory = skills.reduce((acc, skill) => {
+    if (!acc[skill.category]) {
+      acc[skill.category] = [];
+    }
+    acc[skill.category].push(skill);
+    return acc;
+  }, {} as Record<string, Skill[]>);
 
   return (
     <div className="min-h-screen bg-black text-neutral px-6 pt-24 pb-12 md:px-12">
@@ -41,30 +65,40 @@ export default function Skills() {
             Technologies I work with to build modern, scalable applications
           </p>
 
+          {loading && (
+            <div className="text-center text-neutral/60 py-12">
+              Loading skills...
+            </div>
+          )}
+
+          {error && (
+            <div className="mb-4 p-4 bg-yellow-950 border border-yellow-800 rounded-lg text-yellow-200">
+              {error}
+            </div>
+          )}
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {skillCategories.map((category) => (
+            {Object.entries(skillsByCategory).map(([category, categorySkills]) => (
               <div
-                key={category.title}
+                key={category}
                 className="bg-gray-10/30 border border-accent-blue/20 rounded-lg p-6 hover:border-accent-blue/40 transition-all duration-300"
               >
                 <h2 className="text-2xl font-bold text-accent-blue mb-4">
-                  {category.title}
+                  {category}
                 </h2>
-                <ul className="space-y-2">
-                  {category.skills.map((skill) => (
-                    <li key={skill} className="flex items-center text-neutral">
-                      <svg
-                        className="w-5 h-5 mr-3 text-accent-blue flex-shrink-0"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clipRule="evenodd"
+                <ul className="space-y-3">
+                  {categorySkills.map((skill) => (
+                    <li key={skill.id} className="text-neutral">
+                      <div className="flex items-center justify-between mb-1">
+                        <span className="font-medium">{skill.name}</span>
+                        <span className="text-sm text-neutral/60">{skill.proficiency}%</span>
+                      </div>
+                      <div className="w-full bg-gray-800 rounded-full h-1.5">
+                        <div
+                          className="bg-accent-blue h-1.5 rounded-full transition-all duration-300"
+                          style={{ width: `${skill.proficiency}%` }}
                         />
-                      </svg>
-                      {skill}
+                      </div>
                     </li>
                   ))}
                 </ul>

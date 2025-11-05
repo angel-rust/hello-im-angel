@@ -1,4 +1,7 @@
+'use client';
+
 import Link from 'next/link';
+import ContactForm from '@/components/forms/ContactForm';
 
 export default function Connect() {
   const socialLinks = [
@@ -99,6 +102,14 @@ export default function Connect() {
                 </div>
               </a>
             ))}
+          </div>
+
+          <div className="mt-16">
+            <h2 className="text-3xl font-bold mb-4 text-accent-blue">Send Me a Message</h2>
+            <p className="text-neutral/80 mb-8">
+              Have a project in mind or just want to chat? Fill out the form below and I&apos;ll get back to you as soon as possible.
+            </p>
+            <ContactForm />
           </div>
 
           <div className="mt-12 p-6 bg-accent-blue/10 border border-accent-blue/30 rounded-lg">
