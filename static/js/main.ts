@@ -244,5 +244,38 @@ window.addEventListener('beforeunload', () => {
     }
 });
 
+// Typewriter effect for hero description
+function typewriter(element: HTMLElement, text: string, speed: number = 80) {
+    let i = 0;
+    element.textContent = '';
+
+    function type() {
+        if (i < text.length) {
+            element.textContent += text.charAt(i);
+            i++;
+            setTimeout(type, speed);
+        }
+    }
+
+    type();
+}
+
+// Initialize typewriter on homepage
+if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+    window.addEventListener('DOMContentLoaded', () => {
+        const typewriterElement = document.getElementById('typewriter');
+        if (typewriterElement) {
+            // Start after a brief delay for dramatic effect
+            setTimeout(() => {
+                typewriter(
+                    typewriterElement,
+                    'Full Stack Rust Engineer | Critical Thinker | Problem Solver',
+                    60
+                );
+            }, 800);
+        }
+    });
+}
+
 // Export for potential future use
 export { Scene3D };
