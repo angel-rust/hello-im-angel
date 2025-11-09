@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Angel Medina - Full Stack Rust Engineer specializing in high-performance APIs, Web3, Blockchain, and AI Automation">
+    <meta name="keywords" content="Rust, Axum, Full Stack, Web3, Blockchain, AI, Developer, Austin, Denver">
+    <meta name="author" content="Angel Medina">
+
+    <title>{{ page_title | default(value="Angel Medina - Full Stack Rust Engineer") }}</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/static/css/output.css">
+
+    <!-- HTMX -->
+    <script src="https://unpkg.com/htmx.org@2.0.4"></script>
+
+    {% block head %}{% endblock head %}
+</head>
+<body class="min-h-screen flex flex-col">
+    <!-- 3D Canvas Background -->
+    <div id="canvas-container"></div>
+
+    <!-- Navigation -->
+    {% include "components/nav.html" %}
+
+    <!-- Main Content -->
+    <main class="flex-grow relative z-10">
+        {% block content %}{% endblock content %}
+    </main>
+
+    <!-- Footer -->
+    {% include "components/footer.html" %}
+
+    <!-- Scripts -->
+    <script src="/static/js/bundle.js"></script>
+    {% block scripts %}{% endblock scripts %}
+</body>
+</html>

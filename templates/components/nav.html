@@ -1,0 +1,99 @@
+<nav
+    class="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-gray-20"
+>
+    <div class="max-w-7xl mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+            <!-- Logo -->
+            <a
+                href="/"
+                class="text-xl font-bold text-foreground hover:text-accent-blue transition-colors"
+            >
+                <span class="text-accent-blue"></span> angel<span
+                    class="text-gray-30"
+                    >_</span
+                >
+            </a>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center gap-8">
+                <a
+                    href="/"
+                    class="nav-link {% if active_page == 'home' %}text-accent-blue{% else %}text-text-muted hover:text-foreground{% endif %} transition-colors"
+                >
+                    Home
+                </a>
+                <a
+                    href="/about"
+                    class="nav-link {% if active_page == 'about' %}text-accent-blue{% else %}text-gray-30 hover:text-foreground{% endif %} transition-colors"
+                >
+                    About
+                </a>
+                <a
+                    href="/projects"
+                    class="nav-link {% if active_page == 'projects' %}text-accent-blue{% else %}text-gray-30 hover:text-foreground{% endif %} transition-colors"
+                >
+                    Projects
+                </a>
+                <a href="/contact" class="btn-primary text-sm"> Contact </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button
+                id="mobile-menu-btn"
+                class="md:hidden text-foreground hover:text-accent-blue transition-colors"
+            >
+                <svg
+                    class="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M4 6h16M4 12h16M4 18h16"
+                    ></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 space-y-4">
+            <a
+                href="/"
+                class="block {% if active_page == 'home' %}text-accent-blue{% else %}text-text-muted{% endif %} hover:text-foreground transition-colors"
+            >
+                Home
+            </a>
+            <a
+                href="/about"
+                class="block {% if active_page == 'about' %}text-accent-blue{% else %}text-gray-30{% endif %} hover:text-foreground transition-colors"
+            >
+                About
+            </a>
+            <a
+                href="/projects"
+                class="block {% if active_page == 'projects' %}text-accent-blue{% else %}text-gray-30{% endif %} hover:text-foreground transition-colors"
+            >
+                Projects
+            </a>
+            <a
+                href="/contact"
+                class="block text-accent-blue hover:text-accent-blue/80 transition-colors"
+            >
+                Contact
+            </a>
+        </div>
+    </div>
+</nav>
+
+<script>
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    mobileMenuBtn?.addEventListener("click", () => {
+        mobileMenu?.classList.toggle("hidden");
+    });
+</script>

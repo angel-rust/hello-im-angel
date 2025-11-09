@@ -1,52 +1,45 @@
-# Dependencies
+# Rust
+target/
+**/*.rs.bk
+*.pdb
+
+# Node
 node_modules/
-.pnp
-.pnp.js
-
-# Testing
-coverage/
-
-# Next.js
-frontend/.next/
-frontend/out/
-frontend/build
-frontend/dist
-
-# Production
-build/
-dist/
-
-# Misc
-.DS_Store
-*.pem
-
-# Debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Local env files
+# Environment
 .env
 .env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env.production
 
-# Vercel
-.vercel
-
-# Rust
-backend/target/
-backend/**/*.rs.bk
-backend/Cargo.lock
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
+# Build artifacts
+static/js/bundle.js
+static/js/bundle.js.map
+static/css/output.css
 
 # OS
 .DS_Store
 Thumbs.db
+*.swp
+*.swo
+
+# IDE
+.vscode/
+.idea/
+*.code-workspace
+
+# Logs
+*.log
+
+# Database
+*.db
+*.sqlite
+
+# Fly.io
+.fly/
+
+# Old project directories
+frontend/
+backend/

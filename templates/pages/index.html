@@ -1,0 +1,213 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="min-h-screen flex items-center justify-center px-6 pt-20">
+    <div class="max-w-5xl mx-auto text-center">
+        <div class="animate-fade-in">
+            <h1 class="text-6xl md:text-8xl lg:text-9xl font-bold mb-16 text-foreground">
+                Hello, I'm <span class="text-gradient-gold glow-gold">Angel</span>
+            </h1>
+
+            <!-- Invisible spacer to create focal area for 3D effect -->
+            <div class="h-80 md:h-96 lg:h-[32rem]"></div>
+
+            <div class="mb-32 flex flex-col sm:flex-row gap-4 justify-center animate-slide-up" style="animation-delay: 0.3s">
+                <a href="/projects" class="btn-primary">
+                    View Projects
+                </a>
+                <a href="/contact" class="btn-secondary">
+                    Get in Touch
+                </a>
+            </div>
+
+            <!-- Tech Stack Pills -->
+            <div class="mt-16 flex flex-wrap gap-3 justify-center animate-slide-up" style="animation-delay: 0.5s">
+                <span class="px-4 py-2 bg-gray-900 border border-accent/50 rounded-full text-sm text-accent font-mono hover:bg-accent/10 transition-colors cursor-default">Rust</span>
+                <span class="px-4 py-2 bg-gray-900 border border-accent/50 rounded-full text-sm text-accent font-mono hover:bg-accent/10 transition-colors cursor-default">Axum</span>
+                <span class="px-4 py-2 bg-gray-900 border border-accent-dark/50 rounded-full text-sm text-accent-dark font-mono hover:bg-accent-dark/10 transition-colors cursor-default">SQLX</span>
+                <span class="px-4 py-2 bg-gray-900 border border-gray-600/50 rounded-full text-sm text-text-secondary font-mono hover:border-gray-500/50 transition-colors cursor-default">PostgreSQL</span>
+                <span class="px-4 py-2 bg-gray-900 border border-gray-600/50 rounded-full text-sm text-text-secondary font-mono hover:border-gray-500/50 transition-colors cursor-default">TypeScript</span>
+                <span class="px-4 py-2 bg-gray-900 border border-gray-600/50 rounded-full text-sm text-text-secondary font-mono hover:border-gray-500/50 transition-colors cursor-default">React</span>
+                <span class="px-4 py-2 bg-gray-900 border border-gray-600/50 rounded-full text-sm text-text-secondary font-mono hover:border-gray-500/50 transition-colors cursor-default">Tera</span>
+                <span class="px-4 py-2 bg-gray-900 border border-gray-600/50 rounded-full text-sm text-text-secondary font-mono hover:border-gray-500/50 transition-colors cursor-default">HTMX</span>
+                <span class="px-4 py-2 bg-gray-900 border border-gray-600/50 rounded-full text-sm text-text-secondary font-mono hover:border-gray-500/50 transition-colors cursor-default">Stripe</span>
+                <span class="px-4 py-2 bg-gray-900 border border-gray-600/50 rounded-full text-sm text-text-secondary font-mono hover:border-gray-500/50 transition-colors cursor-default">Redis</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Preview with CTA -->
+<section class="py-20 px-6 bg-gradient-to-b from-transparent via-gray-900/30 to-transparent">
+    <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-6">
+            Engineering Excellence with <span class="text-gradient-gold">Critical Thinking</span>
+        </h2>
+        <p class="text-lg text-text-secondary leading-relaxed mb-8">
+            In an era where AI can generate code, what truly matters is <span class="text-accent font-semibold">critical thinking</span>,
+            <span class="text-accent font-semibold">adaptability</span>, and <span class="text-accent font-semibold">communication</span>.
+            I bring a unique blend of technical expertise and soft skills—honed through work in hospitality at Cuvee and
+            building production systems with Rust. Whether it's architecting a 380-city flight deal platform or optimizing
+            customer experiences, I solve complex problems with clarity and precision.
+        </p>
+        <a href="/about" class="inline-flex items-center gap-2 text-accent hover:text-accent-light transition-colors group">
+            <span class="text-lg font-semibold">Learn more about my journey</span>
+            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+        </a>
+    </div>
+</section>
+
+<!-- Featured Projects Showcase -->
+<section class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold text-foreground mb-4">Featured Work</h2>
+            <p class="text-lg text-text-secondary">Check out some of my recent projects</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- FlightMate -->
+            <a href="/projects" class="card group hover:scale-[1.02] cursor-pointer">
+                <div class="flex items-center gap-3 mb-4">
+                    <svg class="w-10 h-10 text-accent flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M21.75 15.5a.75.75 0 01-.75.75h-3.25l-3 5.25a.75.75 0 01-1.299 0l-3-5.25H7.5a.75.75 0 010-1.5h3.25l3-5.25a.75.75 0 011.299 0l3 5.25H21a.75.75 0 01.75.75zm-12-7.5a.75.75 0 01-.75.75H5.75l-3 5.25a.75.75 0 01-1.299 0l-1.2-2.1a.75.75 0 111.299-.75l.45.787 2.4-4.187H9a.75.75 0 01.75.75z"/>
+                    </svg>
+                    <h3 class="text-2xl font-bold text-foreground group-hover:text-accent transition-colors">FlightMate v0.3</h3>
+                </div>
+                <p class="text-text-secondary mb-4 leading-relaxed">
+                    Production ready flight deal platform serving 380 US cities. Built with Rust, Axum, PostgreSQL, and Stripe.
+                    Features regional email clustering, passwordless auth, admin dashboard, and subscription management.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="text-xs px-3 py-1 bg-accent/10 text-accent rounded-full border border-accent/30">Rust</span>
+                    <span class="text-xs px-3 py-1 bg-accent/10 text-accent rounded-full border border-accent/30">Axum</span>
+                    <span class="text-xs px-3 py-1 bg-gray-800 text-text-secondary rounded-full border border-gray-700">PostgreSQL</span>
+                    <span class="text-xs px-3 py-1 bg-gray-800 text-text-secondary rounded-full border border-gray-700">Stripe</span>
+                </div>
+                <div class="flex items-center gap-2 text-accent text-sm font-semibold">
+                    <span>View project</span>
+                    <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </div>
+            </a>
+
+            <!-- Trezza Blockchain -->
+            <a href="/projects" class="card group hover:scale-[1.02] cursor-pointer">
+                <div class="flex items-center gap-3 mb-4">
+                    <svg class="w-10 h-10 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
+                    </svg>
+                    <h3 class="text-2xl font-bold text-foreground group-hover:text-accent transition-colors">Trezza Blockchain</h3>
+                </div>
+                <p class="text-text-secondary mb-4 leading-relaxed">
+                    Decentralized Layer 1 blockchain payment ecosystem on Solana Network, designed to eliminate
+                    transaction fees with a Rust-native POS terminal.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="text-xs px-3 py-1 bg-accent/10 text-accent rounded-full border border-accent/30">Rust</span>
+                    <span class="text-xs px-3 py-1 bg-accent-dark/10 text-accent-dark rounded-full border border-accent-dark/30">Solana</span>
+                    <span class="text-xs px-3 py-1 bg-gray-800 text-text-secondary rounded-full border border-gray-700">Web3</span>
+                </div>
+                <div class="flex items-center gap-2 text-accent text-sm font-semibold">
+                    <span>View project</span>
+                    <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </div>
+            </a>
+        </div>
+
+        <div class="text-center mt-12">
+            <a href="/projects" class="btn-primary inline-flex items-center gap-2">
+                <span>See All Projects</span>
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Skills & Expertise -->
+<section class="py-20 px-6 bg-gradient-to-b from-transparent via-gray-900/30 to-transparent">
+    <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold text-foreground mb-4">
+                What Sets Me <span class="text-gradient-gold">Apart</span>
+            </h2>
+            <p class="text-lg text-text-secondary">Technical excellence meets exceptional soft skills</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="card group">
+                <div class="mb-4 group-hover:scale-110 transition-transform">
+                    <svg class="w-12 h-12 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-foreground mb-3">Communication & Customer Service</h3>
+                <p class="text-text-secondary leading-relaxed">
+                    Honed through hospitality work at Cuvee, I excel at translating complex technical concepts
+                    into clear solutions. Great communication isn't optional—it's the foundation of great engineering.
+                </p>
+            </div>
+
+            <div class="card group">
+                <div class="mb-4 group-hover:scale-110 transition-transform">
+                    <svg class="w-12 h-12 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-foreground mb-3">Critical Thinking & Problem Solving</h3>
+                <p class="text-text-secondary leading-relaxed">
+                    In the AI era, anyone can generate code. What matters is asking the right questions,
+                    architecting scalable systems, and making decisions that balance trade-offs with precision.
+                </p>
+            </div>
+
+            <div class="card group">
+                <div class="mb-4 group-hover:scale-110 transition-transform">
+                    <svg class="w-12 h-12 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M11.983 1.907a.75.75 0 00-1.292-.657l-8.5 9.5A.75.75 0 002.75 12h6.572L6.694 21.439a.75.75 0 001.292.657l8.5-9.5A.75.75 0 0016.25 11H9.678l2.628-8.534a.75.75 0 00-.323-.559z"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-foreground mb-3">Adaptability & Full-Stack Expertise</h3>
+                <p class="text-text-secondary leading-relaxed">
+                    From Rust backends with Axum to frontend work with Tera and HTMX, I thrive in diverse environments.
+                    Currently balancing hospitality work and software engineering—proving adaptability in action.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-32 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl md:text-6xl font-bold text-foreground mb-6">
+            Ready to build something <span class="text-gradient-gold glow-gold">exceptional</span>?
+        </h2>
+        <p class="text-xl text-text-secondary mb-10 leading-relaxed">
+            I'm always interested in hearing about new projects, opportunities, and collaborations.
+            Whether you need a critical thinker who can architect scalable systems or someone who bridges
+            technical expertise with exceptional communication—let's connect.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/contact" class="btn-primary text-lg px-8 py-4">
+                Let's Talk
+            </a>
+            <a href="https://github.com/angel-rust" target="_blank" rel="noopener noreferrer"
+               class="btn-secondary text-lg px-8 py-4 inline-flex items-center gap-2">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+                View GitHub
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock content %}

@@ -1,0 +1,176 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="py-32 px-6">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="section-title">
+            About <span class="text-gradient-gold">Me</span>
+        </h1>
+
+        <div class="prose prose-invert max-w-none">
+            <!-- Introduction -->
+            <div class="card mb-8">
+                <h2 class="text-3xl font-bold text-foreground mb-6">
+                    Critical Thinking in the <span class="text-gradient-gold">AI Era</span>
+                </h2>
+                <p class="text-text-secondary text-lg leading-relaxed mb-4">
+                    Hi, I'm <span class="text-accent font-semibold">Angel Medina</span>, a Full Stack Rust Engineer who believes that in an era
+                    where AI can generate code, what truly matters is <span class="text-accent">critical thinking</span>,
+                    <span class="text-accent">problem solving</span>, and the ability to <span class="text-accent">communicate</span> complex ideas clearly.
+                </p>
+                <p class="text-text-secondary text-lg leading-relaxed mb-4">
+                    I'm not your typical developer. My journey combines <span class="text-foreground font-semibold">hospitality work at Cuvee</span>
+                    with <span class="text-foreground font-semibold">production level Rust engineering</span>. This unique blend gives me something rare:
+                    the technical depth to architect scalable systems and the soft skills to explain them to anyone.
+                </p>
+                <p class="text-text-secondary text-lg leading-relaxed">
+                    Currently, I'm building <span class="text-gradient-gold font-semibold">FlightMate v0.3</span>, a production ready flight deal
+                    platform serving 380 US cities, complete with regional email clustering, passwordless authentication, Stripe payments, and
+                    comprehensive admin systems. It's the kind of project that demands both deep technical expertise and careful decision making.
+                </p>
+            </div>
+
+            <!-- What Sets Me Apart -->
+            <div class="card mb-8">
+                <h2 class="text-3xl font-bold text-foreground mb-6">
+                    What Sets Me <span class="text-gradient-gold">Apart</span>
+                </h2>
+
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-xl font-bold text-accent mb-3 flex items-center gap-3">
+                            <svg class="w-6 h-6 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                            </svg>
+                            Communication & Customer Service
+                        </h3>
+                        <p class="text-text-secondary leading-relaxed">
+                            My work at <span class="text-foreground font-semibold">Cuvee</span> taught me that great engineering isn't just about
+                            writing code—it's about understanding people. I can translate complex technical concepts into clear, actionable insights
+                            whether I'm speaking with a client, a team, or a non-technical stakeholder. In hospitality, every interaction is an
+                            opportunity to create value. In software, it's the same principle.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold text-accent mb-3 flex items-center gap-3">
+                            <svg class="w-6 h-6 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                            </svg>
+                            Critical Thinking & System Design
+                        </h3>
+                        <p class="text-text-secondary leading-relaxed">
+                            AI can generate functions, but it can't architect a system. It can't decide between PostgreSQL indexes or
+                            caching strategies. It can't weigh the trade-offs between monoliths and microservices. I can. I approach every
+                            problem by asking: <span class="text-accent font-semibold">What's the right tool for the job?</span> Not the
+                            trendiest—the <span class="text-accent font-semibold">right one</span>.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold text-accent mb-3 flex items-center gap-3">
+                            <svg class="w-6 h-6 text-accent flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M11.983 1.907a.75.75 0 00-1.292-.657l-8.5 9.5A.75.75 0 002.75 12h6.572L6.694 21.439a.75.75 0 001.292.657l8.5-9.5A.75.75 0 0016.25 11H9.678l2.628-8.534a.75.75 0 00-.323-.559z"/>
+                            </svg>
+                            Adaptability in Action
+                        </h3>
+                        <p class="text-text-secondary leading-relaxed">
+                            I balance hospitality work with professional software development. It's not easy, but it's proof that I thrive
+                            in diverse environments. From optimizing customer experiences at Cuvee to optimizing database queries in Rust,
+                            I bring the same precision and care to everything I do. Adaptability isn't just a buzzword for me—it's a lifestyle.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical Stack -->
+            <div class="card mb-8">
+                <h2 class="text-3xl font-bold text-foreground mb-6">
+                    Current <span class="text-gradient-gold">Tech Stack</span>
+                </h2>
+                <p class="text-text-secondary text-lg leading-relaxed mb-6">
+                    My work on <span class="text-gradient-gold font-semibold">FlightMate v0.3</span> showcases my expertise in:
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-lg font-semibold text-accent mb-3">Backend Engineering</h3>
+                        <ul class="space-y-2 text-text-secondary">
+                            <li>• <span class="text-accent font-mono">Rust</span> - Type safety, performance, fearless concurrency</li>
+                            <li>• <span class="text-accent font-mono">Axum</span> - Modern async web framework</li>
+                            <li>• <span class="text-accent font-mono">SQLX</span> - Compile-time verified SQL</li>
+                            <li>• <span class="text-accent font-mono">PostgreSQL</span> - Advanced queries, indexing, optimization</li>
+                            <li>• <span class="text-accent font-mono">Redis</span> - Session storage and caching</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-semibold text-accent mb-3">Full Stack & Integration</h3>
+                        <ul class="space-y-2 text-text-secondary">
+                            <li>• <span class="text-accent font-mono">Tera</span> - Server-side templating</li>
+                            <li>• <span class="text-accent font-mono">HTMX</span> - Dynamic HTML without JavaScript bloat</li>
+                            <li>• <span class="text-accent font-mono">Stripe</span> - Payment processing and webhooks</li>
+                            <li>• <span class="text-accent font-mono">Resend</span> - Transactional email delivery</li>
+                            <li>• <span class="text-accent font-mono">Docker</span> - Containerization and deployment</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-semibold text-accent mb-3">System Architecture</h3>
+                        <ul class="space-y-2 text-text-secondary">
+                            <li>• Regional email clustering (10 US regions)</li>
+                            <li>• Passwordless authentication with magic links</li>
+                            <li>• Admin dashboards with audit trails</li>
+                            <li>• Subscription management and billing</li>
+                            <li>• Database design (24 normalized tables)</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-semibold text-accent mb-3">Additional Expertise</h3>
+                        <ul class="space-y-2 text-text-secondary">
+                            <li>• <span class="text-accent font-mono">Solana</span> - Blockchain development</li>
+                            <li>• <span class="text-accent font-mono">TypeScript</span> - Type-safe frontends</li>
+                            <li>• <span class="text-accent font-mono">Three.js</span> - WebGL and 3D graphics</li>
+                            <li>• <span class="text-accent font-mono">Railway</span> - Cloud deployment</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Philosophy -->
+            <div class="card">
+                <h2 class="text-3xl font-bold text-foreground mb-6">
+                    My <span class="text-gradient-gold">Philosophy</span>
+                </h2>
+                <div class="space-y-4">
+                    <p class="text-text-secondary text-lg leading-relaxed">
+                        <span class="text-accent font-semibold">1. Solve real problems, not imaginary ones.</span><br/>
+                        I don't chase trends. I use the right tool for the job. Sometimes that's Rust. Sometimes it's simple HTML.
+                        The goal is always the same: solve the problem elegantly.
+                    </p>
+                    <p class="text-text-secondary text-lg leading-relaxed">
+                        <span class="text-accent font-semibold">2. Performance matters.</span><br/>
+                        Users notice when an app is slow. Rust gives me the tools to build systems that are blazingly fast—without
+                        sacrificing safety or maintainability.
+                    </p>
+                    <p class="text-text-secondary text-lg leading-relaxed">
+                        <span class="text-accent font-semibold">3. Communication is everything.</span><br/>
+                        The best code in the world is useless if no one understands it. I write clear documentation, meaningful commit
+                        messages, and code that tells a story.
+                    </p>
+                    <p class="text-text-secondary text-lg leading-relaxed">
+                        <span class="text-accent font-semibold">4. Never stop learning.</span><br/>
+                        The tech landscape changes constantly. I stay curious, embrace challenges, and treat every project as an
+                        opportunity to grow.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-12 text-center">
+            <a href="/contact" class="btn-primary text-lg px-8 py-4">Let's Work Together</a>
+        </div>
+    </div>
+</section>
+{% endblock content %}

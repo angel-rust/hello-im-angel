@@ -1,5 +1,27 @@
 {
+  "name": "angel-portfolio",
+  "version": "1.0.0",
+  "description": "Angel Medina's Portfolio - Full Stack Rust Engineer",
+  "scripts": {
+    "build:css": "tailwindcss -i ./static/css/input.css -o ./static/css/output.css --minify",
+    "watch:css": "tailwindcss -i ./static/css/input.css -o ./static/css/output.css --watch",
+    "build:js": "esbuild static/js/main.ts --bundle --minify --sourcemap --target=es2020 --outfile=static/js/bundle.js",
+    "watch:js": "esbuild static/js/main.ts --bundle --sourcemap --target=es2020 --outfile=static/js/bundle.js --watch",
+    "dev": "concurrently -n css,js,rust \"npm run watch:css\" \"npm run watch:js\" \"cargo watch -x run\"",
+    "build:frontend": "npm run build:css && npm run build:js",
+    "build": "npm run build:frontend && cargo build --release"
+  },
+  "devDependencies": {
+    "@types/three": "^0.180.0",
+    "autoprefixer": "^10.4.20",
+    "concurrently": "^9.0.0",
+    "esbuild": "^0.24.0",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.15",
+    "typescript": "^5.7.2"
+  },
   "dependencies": {
-    "puppeteer": "^24.23.0"
+    "htmx.org": "^2.0.4",
+    "three": "^0.180.0"
   }
 }
